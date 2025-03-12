@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhaar Project</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #2b5876, #4e4376);
+            background-size: 400% 400%;
+            color: #ffdf00;
+            text-align: center;
+            overflow: hidden;
+            animation: backgroundShift 10s ease infinite;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        .header {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #ffdf00;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            animation: typing 3s steps(30, end) forwards, blink 0.6s step-end infinite 3s;
+        }
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #d4d4ff;
+            opacity: 0;
+            animation: fadeInText 2s ease-in-out 3s forwards;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background: #ff8c75;
+            transform: scale(1.1);
+        }
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .shape {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 5s ease-in-out infinite;
+        }
+        .shape.circle {
+            border-radius: 50%;
+        }
+        .shape.square {
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid rgba(255, 255, 255, 0.4);
+        }
+        .shape.star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background: rgba(255, 223, 0, 0.4);
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .shape:hover {
+            background: #ffdf00;
+            transform: scale(1.2) rotate(45deg);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        @keyframes backgroundShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>Welcome to the Aadhaar Project</span>
+        </div>
+        <div class="description">Seamlessly manage Aadhaar verification and integration with our AI-enabled platform.</div>
+        <a href="index" class="button">Get Started</a>
+    </div>
+    <div class="floating-shapes">
+        <div class="shape circle" style="top: 80%; left: 20%; width: 30px; height: 30px; animation-duration: 6s;"></div>
+        <div class="shape square" style="top: 90%; left: 50%; width: 20px; height: 20px; animation-duration: 5s;"></div>
+        <div class="shape circle" style="top: 75%; left: 10%; width: 25px; height: 25px; animation-duration: 5.5s;"></div>
+    </div>
+    <script>
+        console.log('Aadhaar Project Landing Page Loaded');
+    </script>
+</body>
+</html>
